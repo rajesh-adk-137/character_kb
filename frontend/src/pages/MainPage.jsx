@@ -146,6 +146,7 @@ const MainPage = () => {
     setLoading(true);
     setError('');
     setHasSearched(true);
+    setResults([]); // Clear previous results immediately
     setBestMatchImages([]);
     if (showImageSearch) {
       setImagePlaceholders([1, 2, 3, 4]); // Initialize 4 placeholders for images
@@ -393,7 +394,7 @@ const MainPage = () => {
           </div>
         )}
 
-        {/* Results Section */}
+        {/* Results Section - Now properly passes isLoading prop */}
         {hasSearched && (
           <SearchResults
             results={results}
@@ -401,6 +402,7 @@ const MainPage = () => {
             imagePlaceholders={imagePlaceholders}
             showImageSearch={showImageSearch}
             onImageSearchToggle={handleImageSearchToggle}
+            isLoading={loading} // Fixed: Now properly passing the loading state
           />
         )}
       </div>
