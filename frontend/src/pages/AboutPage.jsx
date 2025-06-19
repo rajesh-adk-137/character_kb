@@ -24,13 +24,13 @@ const AboutPage = ({ setCurrentPage }) => {
     {
       icon: <Database className="h-6 w-6" />,
       title: "Massive Character Database",
-      description: "Explore over 10,000+ characters from TV shows, movies, anime, manga, games, and countless other media sources worldwide with comprehensive metadata.",
+      description: "Explore over 10,000+ characters from TV shows, movies, anime, manga, games, and countless other media sources and genre worldwide with comprehensive metadata.",
       color: "from-green-500 to-teal-500"
     },
     {
       icon: <Camera className="h-6 w-6" />,
-      title: "AI Image Discovery",
-      description: "Intelligent image search automatically finds high-quality character images from across the web with smart filtering and recognition algorithms.",
+      title: "Relevant Image Discovery",
+      description: "Intelligent image search automatically finds high-quality character images from across the web based on character profiles which can be furthur explored on a click of a button.",
       color: "from-orange-500 to-red-500"
     }
   ];
@@ -107,24 +107,24 @@ const AboutPage = ({ setCurrentPage }) => {
     {
       icon: <Eye className="h-6 w-6" />,
       title: "Visual Discovery",
-      description: "AI automatically finds and curates character images from across the internet"
+      description: "Instantly fetches crisp, high-resolution images from the web based on character profiles."
     },
     {
       icon: <Image className="h-6 w-6" />,
-      title: "Smart Filtering",
-      description: "Advanced algorithms filter out low-quality images for optimal visual representation"
+      title: "Source-Aware Previews",
+      description: "Click on any displayed image to visit its original source, giving you full context and credibility."
     },
     {
       icon: <Brain className="h-6 w-6" />,
-      title: "Intelligent Recognition",
-      description: "Machine learning models identify and verify character images with confidence scoring"
+      title: "Quick Media Shortcuts",
+      description: "Instantly explore related Google, Wikipedia, and video search results with a single tap."
     }
   ];
 
   const stats = [
     { number: "10,000+", label: "Characters Available" },
     { number: "20+", label: "Media Types" },
-    { number: "AI-Powered", label: "Chat & Search" }
+    { number: "AI Powered", label: "Chat & Search" }
   ];
 
   const handleNavigateToMain = () => {
@@ -307,13 +307,13 @@ const AboutPage = ({ setCurrentPage }) => {
               <div className="text-center mb-6">
                 <div className="inline-flex items-center justify-center gap-2 bg-green-100/80 border-2 border-green-300 rounded-full px-3 py-1 mb-3">
                   <Camera className="h-3 w-3 text-green-600" />
-                  <span className="text-xs text-green-700 font-semibold">AI IMAGE TECHNOLOGY</span>
+                  <span className="text-xs text-green-700 font-semibold">IMAGE SUGGESTIONS</span>
                 </div>
                 <h3 className="text-xl font-extrabold text-green-700 mb-2">
-                  Advanced Image Discovery
+                  Relevant Image Search
                 </h3>
                 <p className="text-green-600 text-xs font-medium mb-4">
-                  AI-powered image discovery for visual character search results and chat avatars.
+                  Fetches high-resolution images from the web using smart quality-based filtering.
                 </p>
               </div>
 
