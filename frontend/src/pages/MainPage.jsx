@@ -256,11 +256,11 @@ const MainPage = () => {
             {/* Enhanced info card */}
             <div className="bg-gradient-to-r from-purple-100/80 to-pink-100/80 backdrop-blur-xl rounded-2xl p-6 border-2 border-purple-200 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="flex items-center justify-center gap-3 mb-3">
-                <Sparkles className="h-6 w-6 text-purple-600" />
+                <Sparkles className="h-6 w-6 text-purple-600 animate-pulse" />
                 <p className="text-purple-700 font-bold text-lg">
                   Discover characters with natural language, then chat with them!
                 </p>
-                <Sparkles className="h-6 w-6 text-purple-600" />
+                <Sparkles className="h-6 w-6 text-purple-600 animate-pulse" />
               </div>
               <p className="text-purple-600 text-sm">
                 Ask life questions and get advice in their unique, fictional style! 🤖
@@ -371,7 +371,7 @@ const MainPage = () => {
                   </>
                 ) : (
                   <>
-                    <Sparkles className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
+                    <Sparkles className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300 animate-pulse" />
                     <span>Find Character</span>
                     <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
                   </>
