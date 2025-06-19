@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mindsdb:
+    image: mindsdb/mindsdb
+    container_name: mindsdb_container
+    ports:
+      - "47334:47334"  # Port for MindsDB GUI and HTTP API
+      - "47335:47335"  # Port for MindsDB MySQL API
+    volumes:
+      - ./mdb_data:/root/mdb_storage  # Persist data on host machine
+    environment:
+      - MKL_SERVICE_FORCE_INTEL=1  # Fix issues related to MKL if necessary
+    restart: unless-stopped
+
+
+# Start container::	docker-compose up -d
+# Stop container::	docker-compose down
+# Stop + delete volume::	docker-compose down -v
+# Rebuild after changes::	docker-compose up --build -d
+# View logs::	docker-compose logs -f

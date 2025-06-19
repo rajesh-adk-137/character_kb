@@ -1,0 +1,8 @@
+venv
+__pycache__
+mdb_data 
+backend/mdb_data/
+# python3 -m venv venv
+# source venv/bin/activate
+# uvicorn app:app --reload
+# .\venv\Scripts\Activate.ps1   
