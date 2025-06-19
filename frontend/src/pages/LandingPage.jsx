@@ -9,10 +9,10 @@ const LandingPage = ({ setCurrentPage }) => {
 
   const examples = [
     "A genius physicist who loves trains and has specific routines",
-    "Billionaire who becomes a symbol of fear for criminals at night",
+    "Billionaire who becomes a symbol of fear for criminals",
     "A pirate captain with a straw hat who can stretch like rubber",
     "A sarcastic robot who loves beer and bending things",
-    "A cowardly teenager who goes on adventures with his scientist grandpa",
+    "A cowardly teenager who goes on adventures with his grandpa",
     "A spiky-haired ninja who dreams of becoming a village leader"
   ];
 
