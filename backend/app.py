@@ -35,9 +35,8 @@ except Exception as e:
 # Request schema for KB query
 class CharacterQueryRequest(BaseModel):
     query: str
-    media_type: str | None = None  # optional
+    media_type: str | None = None
 
-# Response schema for top 5 characters
 class CharacterQueryResponse(BaseModel):
     character_name: str
     genre: str
@@ -51,10 +50,15 @@ class CharacterChatRequest(BaseModel):
     character_description: str
     question: str
 
+# Request schema for insights
+class CharacterInsightRequest(BaseModel):
+    character_name: str
+    character_description: str
+
 # Endpoint to search characters from KB
 @app.post("/character_search", response_model=list[CharacterQueryResponse])
 async def character_search(request: CharacterQueryRequest):
-    try: # character_kb_2
+    try:
         base_query = f"""
             SELECT *
             FROM character_kb_10000
@@ -62,7 +66,6 @@ async def character_search(request: CharacterQueryRequest):
         """
         if request.media_type:
             base_query += f" AND media_type = '{request.media_type}'"
-
         base_query += " LIMIT 5;"
 
         logger.info(f"Querying MindsDB KB: {base_query}")
@@ -91,13 +94,13 @@ async def character_search(request: CharacterQueryRequest):
         logger.error(f"Search failed: {e}")
         raise HTTPException(status_code=500, detail=f"Search failed: {e}")
 
-# ✅ Corrected Endpoint to chat with character using MindsDB model
+# Chat with character using character_agent
 @app.post("/character_chat")
 async def character_chat(request: CharacterChatRequest):
     try:
         query = f"""
-            SELECT response
-            FROM character_advisor
+            SELECT answer
+            FROM character_agent
             WHERE
                 character_name = '{request.character_name}'
                 AND character_description = '{request.character_description}'
@@ -111,8 +114,33 @@ async def character_chat(request: CharacterChatRequest):
         if rows.empty:
             raise HTTPException(status_code=500, detail="No response generated")
 
-        return {"response": rows.iloc[0]["response"]}
+        return {"response": rows.iloc[0]["answer"]}
 
     except Exception as e:
         logger.error(f"Chat failed: {e}")
         raise HTTPException(status_code=500, detail=f"Chat failed: {e}")
+
+# 🎯 New API: Get personality insights using character_insights model
+@app.post("/character_insights")
+async def character_insights(request: CharacterInsightRequest):
+    try:
+        query = f"""
+            SELECT response
+            FROM character_insights
+            WHERE
+                character_name = '{request.character_name}'
+                AND character_description = '{request.character_description}'
+        """
+
+        logger.info(f"Querying MindsDB Insights: {query}")
+        result = project.query(query)
+        rows = result.fetch()
+
+        if rows.empty:
+            raise HTTPException(status_code=500, detail="No insights generated")
+
+        return {"response": rows.iloc[0]["response"]}
+
+    except Exception as e:
+        logger.error(f"Insight generation failed: {e}")
+        raise HTTPException(status_code=500, detail=f"Insight generation failed: {e}")
