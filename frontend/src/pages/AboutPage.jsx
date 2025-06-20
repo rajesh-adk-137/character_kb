@@ -5,6 +5,10 @@ const AboutPage = ({ setCurrentPage }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Scroll to top when component loads
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Set visibility for animations
     setIsVisible(true);
   }, []);
 

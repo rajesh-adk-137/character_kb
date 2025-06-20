@@ -89,6 +89,9 @@ const LandingPage = ({ setCurrentPage }) => {
   ];
 
   useEffect(() => {
+    // Scroll to top when component loads
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
     setIsVisible(true);
     const interval = setInterval(() => {
       setCurrentExample((prev) => (prev + 1) % examples.length);
