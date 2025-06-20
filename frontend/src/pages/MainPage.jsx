@@ -258,7 +258,8 @@ const MainPage = () => {
               <div className="flex items-center justify-center gap-3 mb-3">
                 <Sparkles className="h-6 w-6 text-purple-600 animate-pulse" />
                 <p className="text-purple-700 font-bold text-lg">
-                  Discover characters with natural language, then chat with them!
+                 
+                  "Discover characters in natural language, analyze their personalities & chat with them!"
                 </p>
                 <Sparkles className="h-6 w-6 text-purple-600 animate-pulse" />
               </div>

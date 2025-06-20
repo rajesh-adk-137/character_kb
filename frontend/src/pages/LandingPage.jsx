@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Brain, Sparkles, ArrowRight, Zap, Image, MessageCircle, Star, Users, Globe, Rocket, BookOpen, Film, Gamepad2, Tv, Scroll, Bot, Heart, Lightbulb } from 'lucide-react';
+import { Search, Brain, Sparkles, ArrowRight, Zap, Image, MessageCircle, Star, Users, Globe, Rocket, BookOpen, Film, Gamepad2, Tv, Scroll, Bot, Heart, Lightbulb, Target, Eye } from 'lucide-react';
 import spongebob from '../assets/spongebob.gif';
 import oggy from '../assets/oggy.gif';
 
@@ -24,6 +24,12 @@ const LandingPage = ({ setCurrentPage }) => {
       color: "from-blue-500 to-cyan-500" 
     },
     { 
+      icon: Eye, 
+      title: "Character Insights & Analysis", 
+      desc: "Dive deeper with AI-powered psychological profiling that analyzes personality traits, emotional patterns, and core characteristics with structured insights and personality tags.",
+      color: "from-orange-500 to-red-500" 
+    },
+    { 
       icon: MessageCircle, 
       title: "Interactive Character Chat", 
       desc: "Dive into conversations with discovered characters in their unique voices. Just click 'Chat' to get personalized advice or fun interactions no setup needed.",
@@ -40,7 +46,7 @@ const LandingPage = ({ setCurrentPage }) => {
   const chatFeatures = [
     { 
       icon: Bot, 
-      title: "Authentic Personality", 
+      title: "Authentic Style", 
       desc: "Each character responds with their unique voice, mannerisms, and wisdom"
     },
     { 
@@ -52,6 +58,24 @@ const LandingPage = ({ setCurrentPage }) => {
       icon: Lightbulb, 
       title: "Creative Insights", 
       desc: "Discover new perspectives through the lens of your favorite characters"
+    }
+  ];
+
+  const insightFeatures = [
+    { 
+      icon: Target, 
+      title: "Personality Tags", 
+      desc: "Get concise trait tags that capture the essence of each character's core personality"
+    },
+    { 
+      icon: Brain, 
+      title: "Emotional Profile", 
+      desc: "Explore structured analysis of confidence, optimism, wit, and other emotional dimensions"
+    },
+    { 
+      icon: Eye, 
+      title: "Psychological Depth", 
+      desc: "Understand the deeper motivations and behavioral patterns that drive each character"
     }
   ];
 
@@ -100,18 +124,8 @@ const LandingPage = ({ setCurrentPage }) => {
 
       {/* Character Images */}
       <div className="absolute inset-0 pointer-events-none z-10">
-        {/* SpongeBob
-        <div className="absolute right-[26%] top-[0%] opacity-40 hover:opacity-100 transition-all duration-500 pointer-events-auto group">
-          <img 
-            src={spongebob}
-            alt="SpongeBob" 
-            className="w-20 h-auto lg:w-28 drop-shadow-2xl hover:scale-105 hover:rotate-2 rounded-2xl transition-all duration-500"
-            style={{ filter: 'drop-shadow(0 20px 40px rgba(34, 197, 94, 0.4))' }}
-          />
-        </div> */}
-
         {/* Oggy */}
-        <div className="absolute left-[61.5%] bottom-[32%] opacity-70 hover:opacity-100 transition-all duration-500 pointer-events-auto group">
+        <div className="absolute left-[61.5%] bottom-[28.9%] opacity-80 hover:opacity-100 transition-all duration-500 pointer-events-auto group">
           <img 
             src={oggy}
             alt="Oggy" 
@@ -143,14 +157,14 @@ const LandingPage = ({ setCurrentPage }) => {
           {/* Main Value Prop */}
           <div className="px-4 lg:px-16 mb-8">
             <h2 className="text-2xl md:text-2xl lg:text-4xl font-bold text-slate-700 mb-6 leading-tight">
-              Discover & Chat with Any Character 
+              Discover, Analyze & Chat with Any Character 
               <span className="inline-block ml-2">
                 <Sparkles className="h-8 w-8 text-yellow-500 animate-bounce" />
               </span>
             </h2>
 
             <p className="text-slate-500 text-lg md:text-lg max-w-4xl mx-auto mb-10 mt-10 font-medium opacity-90 leading-relaxed">
-              Transform character discovery with AI-powered semantic understanding, then engage in meaningful conversations. 
+              Transform character discovery with AI-powered semantic understanding, deep psychological insights, then engage in meaningful conversations. 
               Get life advice, creative insights, and unique perspectives from <strong className="text-blue-500 ">10,000+ characters.</strong> 
             </p>
           </div>
@@ -174,38 +188,55 @@ const LandingPage = ({ setCurrentPage }) => {
             </button>
           </div>
 
-          {/* Dynamic Search Example */}
-          <div className="bg-white/80 backdrop-blur-xl border-2 border-blue-300 rounded-2xl p-8 mb-10 max-w-4xl mx-auto shadow-xl hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center gap-3 mb-4">
-              <Search className="h-6 w-6 text-blue-600" />
-              <span className="text-blue-700 font-semibold text-lg">Try natural language search:</span>
-            </div>
-            <div className="text-slate-800 font-mono text-lg md:text-xl mb-4 p-4 bg-blue-50/50 rounded-xl border border-blue-200/50">
-              "{examples[currentExample]}"
-            </div>
-            <div className="flex justify-center gap-1 mb-4">
-              {examples.map((_, i) => (
-                <div 
-                  key={i} 
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${i === currentExample ? 'bg-blue-500' : 'bg-blue-200'}`}
-                />
-              ))}
-            </div>
-            {/* Chat Preview */}
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border-2 border-purple-200">
-              <div className="flex items-center gap-2 mb-2">
-                <MessageCircle className="h-5 w-5 text-purple-600" />
-                <span className="text-purple-700 font-semibold">Then chat with them!</span>
-              </div>
-              <p className="text-slate-600 text-sm">
-                "Hey Luffy, I'm feeling stuck in my career. How do you stay motivated to chase your dreams?"
-              </p>
-            </div>
-          </div>
+        {/* Dynamic Search Example */}
+      <div className="bg-white/80 backdrop-blur-xl border-2 border-blue-300 rounded-2xl p-8 mb-10 max-w-4xl mx-auto shadow-xl hover:shadow-2xl transition-all duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <Search className="h-6 w-6 text-blue-600" />
+          <span className="text-blue-700 font-semibold text-lg">Try natural language search:</span>
+        </div>
+        <div className="text-slate-800 font-mono text-lg md:text-xl mb-4 p-4 bg-blue-50/50 rounded-xl border border-blue-200/50">
+          "{examples[currentExample]}"
+        </div>
+        <div className="flex justify-center gap-1 mb-6">
+          {examples.map((_, i) => (
+            <div 
+              key={i} 
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${i === currentExample ? 'bg-blue-500' : 'bg-blue-200'}`}
+            />
+          ))}
         </div>
 
+        {/* Three Demo Boxes */}
+        <div className="space-y-4">
+          
+
+          {/* Character Insights Preview */}
+          <div className="bg-gradient-to-r from-cyan-50 to-emerald-50 rounded-xl p-4 border-2 border-green-200">
+            <div className="flex items-center gap-2 mb-2 ">
+              <Eye className="h-5 w-5 text-green-600" />
+              <span className="text-green-700 font-semibold">Get deep character insights!</span>
+            </div>
+            <p className="text-slate-600 text-sm ">
+              Get concise trait tags and emotional profile that capture the essence of each character's core personality.
+            </p>
+          </div>
+
+          {/* Chat Preview */}
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border-2 border-purple-200">
+            <div className="flex items-center gap-2 mb-2">
+              <MessageCircle className="h-5 w-5 text-purple-600" />
+              <span className="text-purple-700 font-semibold">Then chat with them!</span>
+            </div>
+            <p className="text-slate-600 text-sm">
+              "Hey Luffy, I'm feeling stuck in my career. How do you stay motivated to chase your dreams?"
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
         {/* Features Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
           {features.map((feature, index) => (
             <div 
               key={index}
@@ -220,6 +251,65 @@ const LandingPage = ({ setCurrentPage }) => {
           ))}
         </div>
 
+        {/* Character Insights Section */}
+        <div className="mb-16">
+          {/* <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+              Unlock <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">Character Insights</span>
+            </h3>
+            <p className="text-slate-600 text-lg max-w-3xl mx-auto">
+              Go beyond surface-level discovery with AI-powered psychological profiling that reveals the deeper essence of every character
+            </p>
+          </div> */}
+          
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+            {insightFeatures.map((feature, index) => (
+              <div key={index} className="bg-white/80 backdrop-blur-xl border-2 border-orange-300 rounded-xl p-6 text-center hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl p-3 mx-auto mb-4">
+                  <feature.icon className="h-6 w-6 text-white" />
+                </div>
+                <h4 className="text-slate-800 font-bold text-lg mb-2">{feature.title}</h4>
+                <p className="text-slate-600 text-sm">{feature.desc}</p>
+              </div>
+            ))}
+          </div> */}
+
+          {/* Insights Preview */}
+          {/* <div className="bg-gradient-to-r from-orange-50/80 to-red-50/80 backdrop-blur-xl border-2 border-orange-200 rounded-2xl p-8 max-w-4xl mx-auto shadow-xl"> */}
+            {/* <div className="flex items-center gap-3 mb-6">
+              <Eye className="h-6 w-6 text-orange-600" />
+              <span className="text-orange-700 font-semibold text-lg">Character Insights Preview:</span>
+            </div> */}
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white/60 rounded-xl p-4">
+                <h5 className="font-bold text-slate-800 mb-3">Personality Tags</h5>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Adventurous</span>
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Optimistic</span>
+                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Determined</span>
+                </div>
+              </div>
+              <div className="bg-white/60 rounded-xl p-4">
+                <h5 className="font-bold text-slate-800 mb-3">Emotional Profile</h5>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-slate-600">Confidence</span>
+                    <div className="w-20 h-2 bg-gray-200 rounded-full">
+                      <div className="w-4/5 h-2 bg-blue-500 rounded-full"></div>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-slate-600">Wit</span>
+                    <div className="w-20 h-2 bg-gray-200 rounded-full">
+                      <div className="w-3/5 h-2 bg-green-500 rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> */}
+          {/* </div> */}
+        </div>
+
         {/* Chat Features Section */}
         <div className="mb-16">
           <div className="text-center mb-12">
@@ -227,7 +317,7 @@ const LandingPage = ({ setCurrentPage }) => {
               Have <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Meaningful Conversations</span>
             </h3>
             <p className="text-slate-600 text-lg max-w-3xl mx-auto">
-              Once you discover your character, dive into authentic conversations that feel real and personal
+             Discover your character and their personality, then dive into real, authentic conversations!
             </p>
           </div>
           
@@ -283,7 +373,7 @@ const LandingPage = ({ setCurrentPage }) => {
             </div>
             <div>
               <div className="text-4xl font-black bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2">
-                Chat
+                Insights
               </div>
               <div className="text-slate-600 font-medium">Ready</div>
             </div>
@@ -293,10 +383,10 @@ const LandingPage = ({ setCurrentPage }) => {
         {/* Final CTA */}
         <div className="text-center bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border-2 border-blue-200 rounded-3xl p-12 max-w-4xl mx-auto shadow-xl">
           <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
-            Ready to discover & chat with characters?
+            Ready to discover, analyze & chat with characters?
           </h3>
           <p className="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">
-            Start exploring with our AI-powered semantic search, then engage in meaningful conversations. No signup required.
+            Start exploring with our AI-powered semantic search, unlock deep character insights, then engage in meaningful conversations. No signup required.
           </p>
           <button
             onClick={handleStartSearching}

@@ -16,22 +16,22 @@ const AboutPage = ({ setCurrentPage }) => {
       color: "from-blue-500 to-indigo-500"
     },
     {
+      icon: <Eye className="h-6 w-6" />,
+      title: "Character Insights & Analysis",
+      description: "AI-powered psychological profiling analyzes personality traits, emotional patterns, and core characteristics. Get concise personality tags and structured emotional profiles highlighting confidence, optimism, wit, and more.",
+      color: "from-orange-500 to-red-500"
+    },
+    {
       icon: <MessageCircle className="h-6 w-6" />,
       title: "Interactive Character Chat",
       description: "Engage in authentic conversations with discovered characters using MindsDB's Agent framework. Get personalized advice, creative insights, and unique perspectives.",
       color: "from-purple-500 to-pink-500"
     },
     {
-      icon: <Database className="h-6 w-6" />,
-      title: "Massive Character Database",
-      description: "Explore over 10,000+ characters from TV shows, movies, anime, manga, games, and countless other media sources and genre worldwide with comprehensive metadata.",
-      color: "from-green-500 to-teal-500"
-    },
-    {
       icon: <Camera className="h-6 w-6" />,
       title: "Relevant Image Discovery",
       description: "Intelligent image search automatically finds high-quality character images from across the web based on character profiles which can be furthur explored on a click of a button.",
-      color: "from-orange-500 to-red-500"
+      color: "from-green-500 to-teal-500"
     }
   ];
 
@@ -85,6 +85,24 @@ const AboutPage = ({ setCurrentPage }) => {
     }
   ];
 
+  const insightFeatures = [
+    {
+      icon: <Target className="h-6 w-6" />,
+      title: "Personality Tags",
+      description: "AI generates concise trait tags that capture the essence of each character's core personality"
+    },
+    {
+      icon: <Brain className="h-6 w-6" />,
+      title: "Emotional Profile",
+      description: "Structured analysis of confidence, optimism, wit, and other emotional dimensions using natural language understanding"
+    },
+    {
+      icon: <Eye className="h-6 w-6" />,
+      title: "Unique UI interface",
+      description: "Visually engaging design with smooth animations and gradient styling that presents insights in an intuitive and aesthetically pleasing layout"
+    }
+  ];
+
   const datasetFeatures = [
     {
       icon: <Globe className="h-6 w-6" />,
@@ -124,7 +142,7 @@ const AboutPage = ({ setCurrentPage }) => {
   const stats = [
     { number: "10,000+", label: "Characters Available" },
     { number: "20+", label: "Media Types" },
-    { number: "AI Powered", label: "Chat & Search" }
+    { number: "AI Powered", label: "Insights & Chat" }
   ];
 
   const handleNavigateToMain = () => {
@@ -145,17 +163,11 @@ const AboutPage = ({ setCurrentPage }) => {
         {/* Header */}
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-12">
-            {/* Badge */}
-            {/* <div className="inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-xl border-2 border-blue-300 rounded-full px-6 py-3 mb-4 shadow-xl">
-              <Sparkles className="h-4 w-4 text-blue-600" />
-              <span className="text-sm text-blue-700 font-semibold">About CharacterKB</span>
-            </div> */}
-
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
               About CharacterKB
             </h1>
             <p className="text-slate-600 text-lg max-w-3xl mx-auto font-medium leading-relaxed">
-              AI-powered character discovery and conversation through cutting-edge technology
+              AI-powered character discovery, psychological insights, and conversation through cutting-edge technology
             </p>
           </div>
         </div>
@@ -200,6 +212,8 @@ const AboutPage = ({ setCurrentPage }) => {
           </div>
         </div>
 
+        
+
         {/* Chat Feature Deep Dive */}
         <div className="container mx-auto px-4 py-12">
           <div className="bg-gradient-to-r from-purple-50/80 to-pink-50/80 backdrop-blur-xl border-2 border-purple-200 rounded-3xl p-8 max-w-6xl mx-auto shadow-xl">
@@ -243,6 +257,52 @@ const AboutPage = ({ setCurrentPage }) => {
           </div>
         </div>
 
+
+        {/* Character Insights Deep Dive */}
+<div className="container mx-auto px-4 py-12">
+  <div className="bg-gradient-to-r from-indigo-50/80 to-blue-50/80 backdrop-blur-xl border-2 border-indigo-200 rounded-3xl p-8 max-w-6xl mx-auto shadow-xl">
+    <div className="text-center mb-8">
+      <div className="inline-flex items-center justify-center gap-2 bg-indigo-100/80 border-2 border-indigo-300 rounded-full px-4 py-2 mb-4">
+        <Eye className="h-4 w-4 text-indigo-600" />
+        <span className="text-sm text-indigo-700 font-semibold">CHARACTER INSIGHTS</span>
+      </div>
+      <h2 className="text-2xl md:text-3xl font-extrabold text-indigo-700 mb-4">
+        AI-Powered Psychological Analysis
+      </h2>
+      <p className="text-indigo-600 text-lg max-w-3xl mx-auto font-medium">
+        Unlock deeper understanding with advanced personality profiling and emotional analysis
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {insightFeatures.map((feature, index) => (
+        <div key={index} className="bg-white/80 border-2 border-indigo-200 rounded-xl p-5 hover:bg-white/90 transition-all duration-300">
+          <div className="text-indigo-500 mb-3">
+            {feature.icon}
+          </div>
+          <h4 className="font-bold text-slate-800 text-sm mb-2">{feature.title}</h4>
+          <p className="text-slate-600 text-xs leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+
+    {/* Technical Implementation */}
+    <div className="mt-8 bg-white/60 border border-indigo-200 rounded-2xl p-6">
+      <h4 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+        <Cpu className="h-5 w-5 text-indigo-600" />
+        Technical Implementation
+      </h4>
+      <p className="text-slate-600 text-sm leading-relaxed">
+        The <strong>Character Insights</strong> feature leverages advanced natural language understanding to analyze and interpret 
+        psychological profiles of characters in our database. The AI system generates concise personality tags that capture core traits, 
+        alongside structured emotional profiles highlighting confidence, optimism, wit, and other key dimensions. This creates a rich, 
+        analytical perspective that makes character exploration more insightful, meaningful, and engaging than traditional search methods.
+      </p>
+    </div>
+  </div>
+</div>
+
+
         {/* Tech Stack */}
         <div className="container mx-auto px-4 py-12">
           <div className="text-center mb-8">
@@ -270,26 +330,26 @@ const AboutPage = ({ setCurrentPage }) => {
         {/* Dataset & Image Features Combined */}
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Dataset Information */}
-            <div className="bg-gradient-to-r from-blue-50/80 to-indigo-50/80 backdrop-blur-xl border-2 border-blue-200 rounded-3xl p-6 shadow-xl">
+                        {/* Dataset Information */}
+            <div className="bg-gradient-to-r from-indigo-50/80 to-blue-50/80 backdrop-blur-xl border-2 border-indigo-200 rounded-3xl p-6 shadow-xl">
               <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center gap-2 bg-blue-100/80 border-2 border-blue-300 rounded-full px-3 py-1 mb-3">
-                  <Database className="h-3 w-3 text-blue-600" />
-                  <span className="text-xs text-blue-700 font-semibold">DATA SOURCE</span>
+                <div className="inline-flex items-center justify-center gap-2 bg-indigo-100/80 border-2 border-indigo-300 rounded-full px-3 py-1 mb-3">
+                  <Database className="h-3 w-3 text-indigo-600" />
+                  <span className="text-xs text-indigo-700 font-semibold">DATA SOURCE</span>
                 </div>
-                <h3 className="text-xl font-extrabold text-blue-700 mb-2">
+                <h3 className="text-xl font-extrabold text-indigo-700 mb-2">
                   CharacterCodex Dataset
                 </h3>
-                <p className="text-blue-600 text-xs font-medium mb-4">
+                <p className="text-indigo-600 text-xs font-medium mb-4">
                   10,000+ character descriptions curated for AI-powered semantic search and conversation.
                 </p>
               </div>
 
               <div className="space-y-3">
                 {datasetFeatures.map((info, index) => (
-                  <div key={index} className="bg-white/80 border border-blue-200 rounded-xl p-3">
+                  <div key={index} className="bg-white/80 border border-indigo-200 rounded-xl p-3">
                     <div className="flex items-center gap-2">
-                      <div className="text-blue-500">
+                      <div className="text-indigo-500">
                         {info.icon}
                       </div>
                       <div>
@@ -302,37 +362,39 @@ const AboutPage = ({ setCurrentPage }) => {
               </div>
             </div>
 
+
             {/* AI Image Features */}
-            <div className="bg-gradient-to-r from-green-50/80 to-teal-50/80 backdrop-blur-xl border-2 border-green-200 rounded-3xl p-6 shadow-xl">
+            <div className="bg-gradient-to-r from-indigo-50/80 to-blue-50/80 backdrop-blur-xl border-2 border-indigo-200 rounded-3xl p-6 shadow-xl">
               <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center gap-2 bg-green-100/80 border-2 border-green-300 rounded-full px-3 py-1 mb-3">
-                  <Camera className="h-3 w-3 text-green-600" />
-                  <span className="text-xs text-green-700 font-semibold">IMAGE SUGGESTIONS</span>
+                <div className="inline-flex items-center justify-center gap-2 bg-indigo-100/80 border-2 border-indigo-300 rounded-full px-3 py-1 mb-3">
+                  <Camera className="h-3 w-3 text-indigo-600" />
+                  <span className="text-xs text-indigo-700 font-semibold">IMAGE SUGGESTIONS</span>
                 </div>
-                <h3 className="text-xl font-extrabold text-green-700 mb-2">
+                <h3 className="text-xl font-extrabold text-indigo-700 mb-2">
                   Relevant Image Search
                 </h3>
-                <p className="text-green-600 text-xs font-medium mb-4">
+                <p className="text-indigo-600 text-xs font-medium mb-4">
                   Fetches high-resolution images from the web using smart quality-based filtering.
                 </p>
               </div>
 
-              <div className="space-y-3">
-                {imageCapabilities.map((feature, index) => (
-                  <div key={index} className="bg-white/80 border border-green-200 rounded-xl p-3">
-                    <div className="flex items-center gap-2">
-                      <div className="text-green-500">
-                        {feature.icon}
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-slate-800 text-xs">{feature.title}</h4>
-                        <p className="text-slate-600 text-xs">{feature.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+  <div className="space-y-3">
+    {imageCapabilities.map((feature, index) => (
+      <div key={index} className="bg-white/80 border border-indigo-200 rounded-xl p-3">
+        <div className="flex items-center gap-2">
+          <div className="text-indigo-500">
+            {feature.icon}
+          </div>
+          <div>
+            <h4 className="font-bold text-slate-800 text-xs">{feature.title}</h4>
+            <p className="text-slate-600 text-xs">{feature.description}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
           </div>
         </div>
 
@@ -346,8 +408,9 @@ const AboutPage = ({ setCurrentPage }) => {
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed max-w-2xl mx-auto">
                 To bridge the gap between human creativity and character discovery through intelligent AI technology. 
-                CharacterKB transforms character exploration into an intuitive, conversational, and engaging experience that 
-                enables meaningful connections with fictional personalities for guidance, inspiration, and creative exploration.
+                CharacterKB transforms character exploration into an intuitive, analytical, and conversational experience that 
+                enables meaningful connections with fictional personalities for guidance, inspiration, and creative exploration through 
+                deep psychological insights and authentic interactions.
               </p>
             </div>
           </div>
@@ -359,16 +422,16 @@ const AboutPage = ({ setCurrentPage }) => {
             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800 mb-4">
               Ready to Experience{' '}
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Character Discovery & Chat?
+                Character Discovery, Insights & Chat?
               </span>
             </h2>
             <p className="text-slate-700 text-sm max-w-xl mx-auto font-medium mb-6">
-              Join thousands of users discovering and conversing with amazing characters using AI-powered technology.
+              Join thousands of users discovering, analyzing, and conversing with amazing characters using AI-powered technology.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={handleNavigateToMain}
-                className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold px-6 py-3 rounded-2xl shadow-lg flex items-center gap-2 hover:shadow-xl transition-all duration-300 hover:scale-102"
+                className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold px-6 py-3 rounded-2xl shadow-lg flex items-center gap-2 hover:shadow-2xl transition-all duration-300 hover:scale-105"
               >
                 <Search className="h-4 w-4" />
                 Try CharacterKB Now
@@ -379,7 +442,7 @@ const AboutPage = ({ setCurrentPage }) => {
                 href="https://quira.sh/quests/creator/details?questId=19"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/90 backdrop-blur-xl border-2 border-blue-300 text-blue-700 font-semibold px-6 py-3 rounded-2xl hover:bg-white/100 transition-colors duration-300"
+                className="bg-white/90 backdrop-blur-xl border-2 border-blue-300 text-blue-700 font-semibold px-6 py-3 rounded-2xl hover:bg-blue-100 transition-colors duration-300"
               >
                 Support the Project
               </a>
