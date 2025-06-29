@@ -210,6 +210,7 @@ CharacterKB implements the following requirements for Quest 019:
   - 🎁 **Integrate CREATE Agent**: The `character_agent` is explicitly implemented for interactive chat. ✅
   - 🎁 **Evaluate the relevancy and accuracy of the documents returned by KB**: `EVALUATE KNOWLEDGE_BASE` was implemented, but a significant bug was encountered where it did not perform semantic evaluation.
 
+### All the bugs encountered have been reported.
 -----
 
 ## Contributing
