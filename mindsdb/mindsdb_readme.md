@@ -150,7 +150,7 @@ WHERE
 
 ----------------------------------------------------------------------
 
--- Set up a data ingestion JOB to periodically add new characters
+-- Set up a data ingestion JOB to periodically check for new updates in the data source and add them to KB.
 -- This job assumes 'unique_id' is incrementally increasing. Adjust WHERE clause based on your data.
 CREATE JOB character_kb_job AS (
   INSERT INTO character_kb_10000
