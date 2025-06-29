@@ -164,10 +164,10 @@ cd character_kb
 
 -----
 
-## 📺 Live Demo
+### 📺 Live Demo
 
 [Click here to watch the demo video](https://github.com/user-attachments/assets/554bffd4-d7f4-4768-bdef-988753f55de0)
------
+
 
 ## Screenshots
 
