@@ -221,7 +221,6 @@ CharacterKB implements the following requirements for Quest 019:
 4.  Push your branch (`git push origin feature/YourFeature`).
 5.  Open a pull request.
 
-Please follow the existing code style and include tests where applicable.
 
 -----
 
