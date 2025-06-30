@@ -188,9 +188,14 @@ cd character_kb
 ![Image7](https://github.com/user-attachments/assets/154bd61d-fb99-48da-b124-4c56576a27cc)
 
 
+
 ### Mobile Friendly
 
 [Fully mobile compatible](https://github.com/user-attachments/assets/33af5092-1a93-4399-9e6a-042e707ef60d)
+
+
+### Dataset
+![Dataset screenshot](https://github.com/user-attachments/assets/7ea0fe36-f055-46ce-90de-2448a24522d3)
 
 -----
 
