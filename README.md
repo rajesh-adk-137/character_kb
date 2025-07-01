@@ -197,6 +197,14 @@ cd character_kb
 ### Dataset
 ![Dataset screenshot](https://github.com/user-attachments/assets/7ea0fe36-f055-46ce-90de-2448a24522d3)
 
+
+-----
+
+
+## 📎 Dev.to Article
+
+🔗 [Read on Dev.to](https://dev.to/rajesh-adk-137/characterkb-your-ai-powered-companion-for-fictional-characters-40i)
+
 -----
 
 ## MindsDB Quest 019 Compliance
